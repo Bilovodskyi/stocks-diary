@@ -34,11 +34,6 @@ import {
 } from "recharts";
 
 import { Tooltip as TooltipChart } from "recharts";
-import {
-    NameType,
-    Payload,
-    ValueType,
-} from "recharts/types/component/DefaultTooltipContent";
 
 const DocumentPageCards = () => {
     const [startCapital, setStartCapital] = useState("");

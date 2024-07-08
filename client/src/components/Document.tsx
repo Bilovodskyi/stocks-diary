@@ -10,7 +10,7 @@ import {
     useChangeDocumentNameMutation,
     useDeleteDocumentMutation,
 } from "../redux/api-slices/documentApiSlice";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
     Tooltip,
     TooltipContent,

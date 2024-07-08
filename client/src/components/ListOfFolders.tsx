@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { useGetAllFoldersMutation } from "../redux/api-slices/folderApiSlice";
 import NestedFolders from "./NestedFolders";
 import { useAppDispatch, useAppSelector } from "../redux/store";
