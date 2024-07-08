@@ -59,6 +59,27 @@ const changeDocumentName = asyncHandler(async (req, res) => {
     }
 });
 
+// @desc Change Start Capital
+// @route PUT /api/document/start-capital
+// @access Private
+const changeDocumentStartCapital = asyncHandler(async (req, res) => {
+    try {
+        const document = await Document.findById(req.body.id);
+        if (document) {
+            document.startCapital = req.body.startCapital;
+            const updatedDocument = await document.save();
+            res.status(200).json({
+                startCapital: updatedDocument.startCapital,
+            });
+        } else {
+            res.status(404);
+            throw new Error("Document not found!");
+        }
+    } catch (err) {
+        console.log(err);
+    }
+});
+
 // @desc Delete Document
 // @route DELETE /api/document
 // @access Private
@@ -73,4 +94,24 @@ const deleteDocument = asyncHandler(async (req, res) => {
     }
 });
 
-export { createDocument, getAllDocuments, changeDocumentName, deleteDocument };
+// @desc Get Single Document
+// @route POST /api/document/get-single-doc
+// @access Private
+const getSingleDocument = asyncHandler(async (req, res) => {
+    const documentId = req.body._id;
+    try {
+        const doc = await Document.findOne({ _id: documentId });
+        res.status(200).json({ data: doc });
+    } catch (err) {
+        console.log(err);
+    }
+});
+
+export {
+    createDocument,
+    getAllDocuments,
+    changeDocumentName,
+    changeDocumentStartCapital,
+    deleteDocument,
+    getSingleDocument,
+};

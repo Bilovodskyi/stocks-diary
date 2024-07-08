@@ -2,6 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./slices/authSlice";
 import folderReducer from "./slices/folderSlice";
 import documentReducer from "./slices/documentSlice";
+import recordReducer from "./slices/recordSlice";
+import sideNavSlice from "./slices/sideNavSlice";
 import { apiSlice } from "./api-slices/apiSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
@@ -10,6 +12,8 @@ const store = configureStore({
         auth: authReducer,
         folders: folderReducer,
         documents: documentReducer,
+        records: recordReducer,
+        nav: sideNavSlice,
         [apiSlice.reducerPath]: apiSlice.reducer,
     },
     middleware: (getDefaultMiddleware) =>

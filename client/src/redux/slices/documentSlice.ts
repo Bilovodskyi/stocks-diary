@@ -25,6 +25,13 @@ const documentSlice = createSlice({
                 doc.name = newName;
             }
         },
+        changeLocalDocumentStartCapital: (state, action) => {
+            const { id, startCapital } = action.payload;
+            const doc = state.documents?.find((doc) => doc._id === id);
+            if (doc) {
+                doc.startCapital = startCapital;
+            }
+        },
         deleteLocalDocument: (state, action) => {
             let newArray = state.documents
                 .filter((doc) => doc._id !== action.payload)
@@ -40,6 +47,7 @@ export const {
     setInitialDocuments,
     createNewDocument,
     changeLocalDocumentName,
+    changeLocalDocumentStartCapital,
     deleteLocalDocument,
 } = documentSlice.actions;
 

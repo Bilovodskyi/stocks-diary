@@ -4,9 +4,9 @@ import { fadeIn, fadeInWithDelay } from "../utils/motion";
 
 export function StartPage() {
     return (
-        <div className="start-page w-screen px-24">
+        <div className="start-page w-screen md:px-24 px-8">
             <div className="shadow-container"></div>
-            <div className="h-[60px] flex items-end justify-end">
+            <div className="h-[70px] md:h-[60px] flex items-end justify-end">
                 <div className="flex gap-6 items-center">
                     <Button>Go to Journal</Button>
                 </div>
@@ -18,7 +18,7 @@ export function StartPage() {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.25 }}>
-                        <h1 className="main-text text-[4.5rem] text-center">
+                        <h1 className="main-text text-[4rem] md:text-[4.5rem] text-center">
                             Unleash the power of intuitive finance
                         </h1>
                     </motion.div>
@@ -28,7 +28,7 @@ export function StartPage() {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.25 }}>
-                        <p className="text-xl text-center mb-6">
+                        <p className="text-xl text-center mb-6 start-page-text">
                             Say goodbye to the outdated financial tools. Every
                             small business owner, regardless of the background,
                             can now manage their business like a pro. Simple.
@@ -37,7 +37,7 @@ export function StartPage() {
                     </motion.div>
                     <Button>Go to Journal</Button>
                 </div>
-                <div className="w-[1100px] h-[652px] ring-1 ring-zinc-100/10 rounded-2xl bg-black">
+                <div className="md:w-[1100px] md:h-[652px] ring-1 ring-zinc-100/10 rounded-2xl bg-black">
                     <motion.div
                         variants={fadeIn}
                         initial="hidden"

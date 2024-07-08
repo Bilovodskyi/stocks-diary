@@ -5,7 +5,7 @@ export function Button({ className = "", children, ...props }: ButtonProps) {
         <Link
             to="/journal"
             {...props}
-            className={`group button-shadow relative rounded-full p-px hover:text-white transition-all duration-300 ease-in-out ${className}`}>
+            className={`group button-shadow max-[768px]:text-[1.5rem] relative rounded-full p-px hover:text-white transition-all duration-300 ease-in-out ${className}`}>
             <div className="relative z-10 rounded-full bg-zinc-900 px-4 py-1.5 ring-1 ring-white/10">
                 {children}
             </div>

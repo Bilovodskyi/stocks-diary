@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import { deleteChildren } from "./folderModel.js";
 
-const folderSchema = mongoose.Schema({
+const documentSchema = mongoose.Schema({
     _id: { type: String, required: true },
     name: { type: String, required: true },
     createdAt: { type: Date, default: () => Date.now() },
@@ -10,18 +11,24 @@ const folderSchema = mongoose.Schema({
         ref: "Folder",
         default: null,
     },
-    type: { type: String },
-    amount: { type: Number },
-    deposit: { type: Number },
-    dateOpen: { type: Number },
-    dateClose: { type: Number },
-    timeOpen: { type: Number },
-    timeClose: { type: Number },
-    result: { type: Number },
-    comision: { type: Number },
-    comments: { type: String },
+    startCapital: { type: Number },
+    records: [{ type: mongoose.Schema.Types.ObjectId, ref: "Record" }],
 });
 
-const Document = mongoose.model("Document", folderSchema);
+documentSchema.pre("findOneAndDelete", async function (next) {
+    const doc = await this.model.findOne(this.getQuery());
+    if (doc) {
+        await deleteChildren(doc._id, "Record");
+    }
+    next();
+});
+
+documentSchema.pre("remove", async function (next) {
+    const doc = this;
+    await deleteChildren(doc._id, "Record");
+    next();
+});
+
+const Document = mongoose.model("Document", documentSchema);
 
 export default Document;

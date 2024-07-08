@@ -18,9 +18,23 @@ export const documentApiSlice = apiSlice.injectEndpoints({
                 body: data,
             }),
         }),
+        getSingleDocument: builder.mutation({
+            query: (data) => ({
+                url: `${DOCUMENT_URL}/get-single-doc`,
+                method: "POST",
+                body: data,
+            }),
+        }),
         changeDocumentName: builder.mutation({
             query: (data) => ({
                 url: `${DOCUMENT_URL}`,
+                method: "PUT",
+                body: data,
+            }),
+        }),
+        changeDocumentStartCapital: builder.mutation({
+            query: (data) => ({
+                url: `${DOCUMENT_URL}/start-capital`,
                 method: "PUT",
                 body: data,
             }),
@@ -38,6 +52,8 @@ export const documentApiSlice = apiSlice.injectEndpoints({
 export const {
     useCreateDocumentMutation,
     useGetAllDocumentsMutation,
+    useGetSingleDocumentMutation,
     useChangeDocumentNameMutation,
+    useChangeDocumentStartCapitalMutation,
     useDeleteDocumentMutation,
 } = documentApiSlice;

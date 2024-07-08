@@ -22,27 +22,29 @@ const folderSchema = mongoose.Schema({
     //     },
     // },
     children: [{ type: mongoose.Schema.Types.ObjectId, ref: "Folder" }],
-    files: [{ type: mongoose.Schema.Types.ObjectId, ref: "File" }],
+    docs: [{ type: mongoose.Schema.Types.ObjectId, ref: "Document" }],
 });
 
 folderSchema.pre("findOneAndDelete", async function (next) {
     const doc = await this.model.findOne(this.getQuery());
     if (doc) {
-        await deleteChildren(doc._id);
+        await deleteChildren(doc._id, "Folder");
+        await deleteChildren(doc._id, "Document");
     }
     next();
 });
 
 folderSchema.pre("remove", async function (next) {
     const doc = this;
-    await deleteChildren(doc._id);
+    await deleteChildren(doc._id, "Folder");
+    await deleteChildren(doc._id, "Document");
     next();
 });
 
-const deleteChildren = async (parentId) => {
-    const children = await mongoose.model("Folder").find({ parent: parentId });
+export const deleteChildren = async (parentId, model) => {
+    const children = await mongoose.model(model).find({ parent: parentId });
     for (const child of children) {
-        await mongoose.model("Folder").findOneAndDelete({ _id: child._id });
+        await mongoose.model(model).findOneAndDelete({ _id: child._id });
     }
 };
 const Folder = mongoose.model("Folder", folderSchema);
