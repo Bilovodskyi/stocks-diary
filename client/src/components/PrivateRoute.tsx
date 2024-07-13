@@ -4,6 +4,7 @@ import { useAppSelector } from "../redux/store";
 const PrivateRoute = () => {
     const userInfo = useAppSelector((state) => state.auth.userInfo);
     return userInfo ? <Outlet /> : <Navigate to="/signin" replace />;
+    // return <Outlet />;
 };
 
 export default PrivateRoute;

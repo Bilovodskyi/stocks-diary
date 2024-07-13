@@ -243,10 +243,17 @@ const SideNavigation = () => {
                         </Link>
                     </div>
                     <div className="flex gap-10 items-center">
-                        <h2 className="text-[1.1rem] md:text-[.9rem]">
-                            {userInfo?.name[0].toUpperCase()}
-                            {userInfo?.name.slice(1)}'s diary
-                        </h2>
+                        {userInfo &&
+                        userInfo.name &&
+                        typeof userInfo.name === "string" &&
+                        userInfo.name.length > 0 ? (
+                            <h2 className="text-[1.1rem] md:text-[.9rem]">
+                                {userInfo.name[0].toUpperCase()}
+                                {userInfo.name.slice(1)}'s diary
+                            </h2>
+                        ) : (
+                            <p>Loading...</p>
+                        )}
                         <button onClick={logoutHandler}>
                             <RxExit className="text-[1.75rem] md:text-[1.2rem] hover:text-white/80" />
                         </button>
