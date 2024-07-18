@@ -26,7 +26,7 @@ export function MainPageCard({
 }: MainPageCardProps) {
     return (
         <div
-            className={`${className} ring-1 ring-zinc-100/10 bg-zinc-900/50 h-[580px] md:h-[480px] rounded-xl overflow-hidden`}>
+            className={`${className} ring-1 ring-zinc-100/10 bg-zinc-900/50 h-[420px] md:h-[480px] rounded-xl overflow-hidden`}>
             <div className="relative h-[60%] md:h-[70%] flex items-center justify-center overflow-hidden">
                 {image.length > 0 ? (
                     <>
@@ -38,12 +38,10 @@ export function MainPageCard({
                 )}
             </div>
             <div className="h-[40%] md:h-[30%] px-8 pb-8 flex flex-col gap-3 pt-8 md:pt-2">
-                <h2 className="text-white text-[1.5rem] md:text-[1.1rem]">
+                <h2 className="text-white text-[1rem] md:text-[1.1rem]">
                     {title}
                 </h2>
-                <p className="text-[1.3rem] md:text-[0.9rem] md:leading-6 leading-8">
-                    {text}
-                </p>
+                <p className="text-[0.9rem] leading-6">{text}</p>
             </div>
         </div>
     );

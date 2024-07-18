@@ -63,21 +63,21 @@ const Document = ({ document }: MyDocumentTypeProps) => {
             onClick={handleOpenDocument}
             className="cursor-pointer group/document flex justify-between items-center w-full mb-2 hover:bg-gray-100/10 px-2 py-2 md:py-1">
             <div className="flex gap-2 md:gap-1 items-center w-full pl-1">
-                <AiOutlineStock className="max-[768px]:text-[1.5rem]" />
+                <AiOutlineStock className="max-[768px]:text-[1.25rem]" />
                 {isEditing ? (
                     <input
                         type="text"
                         onChange={(e) => setNewName(e.target.value)}
                         autoFocus
-                        className="bg-transparent w-[80%] text-[1.5rem] md:text-[0.9rem] outline-none"
+                        className="bg-transparent w-[80%] text-[1.1rem] md:text-[0.9rem] outline-none"
                     />
                 ) : (
-                    <p className="text-[1.5rem] md:text-[0.9rem] md:w-[80px] overflow-hidden">
+                    <p className="text-[1.1rem] md:text-[0.9rem] md:w-[80px] overflow-hidden">
                         {document.name}
                     </p>
                 )}
             </div>
-            <div className="flex gap-5 md:gap-2 items-center md:opacity-0 group-hover/document:opacity-100">
+            <div className="flex gap-3 md:gap-2 items-center md:opacity-0 group-hover/document:opacity-100">
                 {isEditing ? (
                     <div className="flex gap-3 md:gap-2">
                         {newName.length > 0 && (
@@ -86,7 +86,7 @@ const Document = ({ document }: MyDocumentTypeProps) => {
                                     <TooltipTrigger>
                                         <VscCheck
                                             onClick={handleFolderNameChange}
-                                            className="hover:text-white/80 max-[768px]:text-[1.75rem]"
+                                            className="hover:text-white/80 max-[768px]:text-[1.2rem]"
                                         />
                                     </TooltipTrigger>
                                     <TooltipContent side="bottom">
@@ -99,7 +99,7 @@ const Document = ({ document }: MyDocumentTypeProps) => {
                             <Tooltip>
                                 <TooltipTrigger>
                                     <VscChromeClose
-                                        className="hover:text-white/80 max-[768px]:text-[1.75rem]"
+                                        className="hover:text-white/80 max-[768px]:text-[1.2rem]"
                                         onClick={() => setIsEditing(false)}
                                     />
                                 </TooltipTrigger>
@@ -117,7 +117,7 @@ const Document = ({ document }: MyDocumentTypeProps) => {
                                     onClick={handleEdit}
                                     role="button"
                                     className="cursor-pointer">
-                                    <VscEdit className="hover:text-white/80 z-20 max-[768px]:text-[1.75rem]" />
+                                    <VscEdit className="hover:text-white/80 z-20 max-[768px]:text-[1.2rem]" />
                                 </div>
                             </TooltipTrigger>
                             <TooltipContent side="bottom">
@@ -133,7 +133,7 @@ const Document = ({ document }: MyDocumentTypeProps) => {
                                 className="cursor-pointer"
                                 role="button"
                                 onClick={handleDeleteDocument}>
-                                <VscTrash className="hover:text-white/80 max-[768px]:text-[1.75rem]" />
+                                <VscTrash className="hover:text-white/80 max-[768px]:text-[1.2rem]" />
                             </div>
                         </TooltipTrigger>
                         <TooltipContent side="bottom">

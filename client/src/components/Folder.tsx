@@ -143,21 +143,21 @@ const Folder = ({ folder, getChildFolders }: FolderProps) => {
                             onClick={handleHideFolder}
                         />
                     )}
-                    <VscFolder className="shrink-0 max-[768px]:text-[1.5rem]" />
+                    <VscFolder className="shrink-0 max-[768px]:text-[1.25rem]" />
                     {isEditing ? (
                         <input
                             type="text"
                             onChange={(e) => setNewName(e.target.value)}
                             autoFocus
-                            className="bg-transparent w-[80%] text-[1.5rem] md:text-[0.9rem] outline-none"
+                            className="bg-transparent w-[80%] text-[1.1rem] md:text-[0.9rem] outline-none"
                         />
                     ) : (
-                        <p className="text-[1.5rem] md:text-[0.9rem] w-[80px] overflow-hidden">
+                        <p className="text-[1.1rem] md:text-[0.9rem] w-[80px] overflow-hidden">
                             {folder.name}
                         </p>
                     )}
                 </div>
-                <div className="flex gap-5 md:gap-2 items-center md:opacity-0 group-hover/folder:opacity-100">
+                <div className="flex gap-3 md:gap-2 items-center md:opacity-0 group-hover/folder:opacity-100">
                     {isEditing ? (
                         <div className="flex gap-2">
                             {newName.length > 0 && (
@@ -166,7 +166,7 @@ const Folder = ({ folder, getChildFolders }: FolderProps) => {
                                         <TooltipTrigger>
                                             <VscCheck
                                                 onClick={handleFolderNameChange}
-                                                className="hover:text-white/80 max-[768px]:text-[1.75rem]"
+                                                className="hover:text-white/80 max-[768px]:text-[1.2rem]"
                                             />
                                         </TooltipTrigger>
                                         <TooltipContent side="bottom">
@@ -179,7 +179,7 @@ const Folder = ({ folder, getChildFolders }: FolderProps) => {
                                 <Tooltip>
                                     <TooltipTrigger>
                                         <VscChromeClose
-                                            className="hover:text-white/80 max-[768px]:text-[1.75rem]"
+                                            className="hover:text-white/80 max-[768px]:text-[1.2rem]"
                                             onClick={() => setIsEditing(false)}
                                         />
                                     </TooltipTrigger>
@@ -195,7 +195,7 @@ const Folder = ({ folder, getChildFolders }: FolderProps) => {
                                 <TooltipTrigger>
                                     <VscEdit
                                         onClick={() => setIsEditing(true)}
-                                        className="hover:text-white/80 max-[768px]:text-[1.75rem]"
+                                        className="hover:text-white/80 max-[768px]:text-[1.2rem]"
                                     />
                                 </TooltipTrigger>
                                 <TooltipContent side="bottom">
@@ -210,7 +210,7 @@ const Folder = ({ folder, getChildFolders }: FolderProps) => {
                                 <div
                                     className="cursor-pointer"
                                     onClick={handleCreateFolder}>
-                                    <VscNewFolder className="hover:text-white/80 max-[768px]:text-[1.75rem]" />
+                                    <VscNewFolder className="hover:text-white/80 max-[768px]:text-[1.2rem]" />
                                 </div>
                             </TooltipTrigger>
                             <TooltipContent side="bottom">
@@ -225,7 +225,7 @@ const Folder = ({ folder, getChildFolders }: FolderProps) => {
                                 <div
                                     className="cursor-pointer"
                                     onClick={handleCreateDocument}>
-                                    <VscNewFile className="hover:text-white/80 max-[768px]:text-[1.75rem]" />
+                                    <VscNewFile className="hover:text-white/80 max-[768px]:text-[1.2rem]" />
                                 </div>
                             </TooltipTrigger>
                             <TooltipContent side="bottom">
@@ -239,7 +239,7 @@ const Folder = ({ folder, getChildFolders }: FolderProps) => {
                                 <div
                                     className="cursor-pointer"
                                     onClick={handleDeleteFolder}>
-                                    <VscTrash className="hover:text-white/80 max-[768px]:text-[1.75rem]" />
+                                    <VscTrash className="hover:text-white/80 max-[768px]:text-[1.2rem]" />
                                 </div>
                             </TooltipTrigger>
                             <TooltipContent side="bottom">

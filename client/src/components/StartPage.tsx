@@ -4,7 +4,7 @@ import { fadeIn, fadeInWithDelay } from "../utils/motion";
 
 export function StartPage() {
     return (
-        <div className="start-page w-screen md:px-24 px-8">
+        <div className="start-page w-screen md:px-24 px-4">
             <div className="shadow-container"></div>
             <div className="h-[70px] md:h-[60px] flex items-end justify-end">
                 <div className="flex gap-6 items-center">
@@ -12,13 +12,13 @@ export function StartPage() {
                 </div>
             </div>
             <div className="flex flex-col items-center">
-                <div className="max-w-3xl my-40 flex flex-col items-center gap-8">
+                <div className="max-w-3xl my-20 md:my-40 flex flex-col items-center gap-8">
                     <motion.div
                         variants={fadeIn}
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.25 }}>
-                        <h1 className="main-text text-[4rem] md:text-[4.5rem] text-center">
+                        <h1 className="main-text text-[3rem] md:text-[4.5rem] text-center">
                             Unleash the power of intuitive finance
                         </h1>
                     </motion.div>

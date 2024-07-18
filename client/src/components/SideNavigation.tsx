@@ -207,7 +207,7 @@ const SideNavigation = () => {
                     </TooltipProvider>
                 </div>
 
-                <div className="mt-6 md:mt-4 ml-6 md:ml-2 max-[768px]:text-[1.1rem]">
+                <div className="mt-6 md:mt-4 ml-6 md:ml-2 max-[768px]:text-[1.2rem]">
                     <p>Your Folders and Docs</p>
                 </div>
                 <div className="mt-6 md:mt-4 mx-4 md:mx-2">

@@ -127,12 +127,21 @@ h1 {
 
 @media (max-width: 768px) {
     .start-page-text {
-        line-height: 2.5rem;
-        font-size: 1.5rem;
+        line-height: 1.85rem;
+        font-size: 1.1rem;
     }
 
     .faded-line {
         width: 100%;
+    }
+
+    .shadow-container {
+        width: auto;
+    }
+
+    h1 {
+        line-height: 3.5rem;
+        /* letter-spacing: -0.025em; */
     }
 }
 
